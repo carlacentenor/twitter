@@ -20,8 +20,8 @@ body {
   margin: 10px;
   float: left;
   width: 593px;
-  height:  auto;
-background-color: #e8f5fd;
+  height: auto;
+  background-color: #e8f5fd;
 }
 
 .box-suger {
@@ -68,5 +68,5 @@ button {
 
 span {
   font-size: 20px;
-font-weight: 700;
+  font-weight: 700;
 }
