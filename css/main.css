@@ -2,6 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
+}
+
+header {
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  box-shadow: 1px 1px 10px #acb1b4;
 }
 
 body {
@@ -10,12 +18,106 @@ body {
 }
 
 main {
-  margin: 20px auto;
+  margin: 10px auto;
   width: 90%;
   height: auto;
 }
 
-img {
+.name-user {
+  font-weight: 700;
+  font-size: 18px;
+}
+.short-user {
+  color: #657796;
+  font-size: 14px;
+}
+
+.box-name-user{
+  width: 110px;
+  position: relative;
+  left: 110px;
+}
+
+.number{
+  color: #66a1f2;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100px;
+  text-align: center;
+}
+
+.text-number{
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #657796;
+}
+
+table {
+  margin: 10px;
+}
+
+nav {
+  width: 50%;
+   margin-left: 60px;
+}
+.logo{
+  color:#1da1f2;
+  font-size: 20px;
+  position: relative;
+  left: 300px;
+  
+}
+
+.iconos {
+  color: #66757f;
+  margin-left: 20px;
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.iconos:hover {
+  color:#1da1f2;
+  border-bottom: 3px solid #1da1f2;
+  transition: 0.5s;
+}
+
+header div p {
+display: inline-block;
+font-size: 13px;
+font-weight: 700;
+margin-left: 10px;
+}
+
+header div {
+  height: auto;
+  width: auto;
+  display: inline-block;
+  margin: 15px auto;
+  font-weight: 700;
+}
+
+.photo-user img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  border: 3px solid white;
+  position: absolute;
+  top: 50px;
+  left: 13px;
+}
+
+.photo-user-textarea img {
+  width: 50px;
+  height:50px;
+  border-radius: 50px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+
+
+figure img {
   width: 290px;
   height: 90px;
 }
@@ -25,6 +127,7 @@ img {
   float: left;
   width: 290px;
   height: 200px;
+  position: relative;
 }
 
 .box-tweet {
@@ -33,6 +136,7 @@ img {
   width: 593px;
   height: auto;
   background-color: #e8f5fd;
+  position: relative;
 }
 
 .box-suger {
@@ -46,9 +150,11 @@ img {
   background-color: white;
 }
 
+
+
 textarea {
   width: 500px;
-  margin: 15px 20px 5px;
+  margin: 15px 70px 5px;
   border: 2px solid #a4d9f9;
   border-radius: 8px;
   outline: none;
@@ -81,4 +187,21 @@ button {
 span {
   font-size: 20px;
   font-weight: 700;
+}
+
+h2{
+  font-size: 20px;
+  margin: 10px 15px;
+}
+
+h3 {
+  color: #66a1f2;
+  font-size: 14px;
+  margin: 10px 15px;
+}
+
+.box-suger p {
+  font-size: 14px;
+  color: #657786;
+  margin: 10px 15px;
 }
