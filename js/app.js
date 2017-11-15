@@ -9,6 +9,7 @@ var textarea = document.querySelector('#text'); /*obtenemos el textarea*/
 
 textarea.addEventListener('keyup', validate);
 textarea.addEventListener('keyup', countText);
+textarea.addEventListener('keydown', resizeTextArea);
 /*evento que inicializa con una tecla*/
 btn.addEventListener('click', sendTweet);
 
@@ -21,6 +22,20 @@ function validate() {
 
 	}
 }
+
+function resizeTextArea(event) {
+	var colsInitial = textarea.getAttribute('cols');
+	var rowsInitial = textarea.getAttribute('rows');
+	if (textarea.value.length !== 0) {
+		if (event.keyCode == 13 || parseInt(textarea.value.length) % 62 == 0) {
+			var rowsFinal = parseInt(rowsInitial) + 1;
+			textarea.setAttribute('rows', rowsFinal);
+		}
+	} else {
+		textarea.setAttribute('rows', 2);
+	}
+}
+
 
 /*funciones que habilitan y deshabilitan el boton*/
 function btnDisabled() {
@@ -39,10 +54,12 @@ function sendTweet(event) {
 	var newTweet = document.createElement('div');
 	newTweet.style.backgroundColor = 'white';
 	newTweet.style.width = 'inherit';
+	newTweet.style.height = 'auto';
+	newTweet.style.wordWrap = 'break-word';
 	newTweet.style.border = '1px solid #e6ecf0';
 	newTweet.style.padding = '15px';
 	newTweet.style.fontFamily = 'Source Sans Pro';
-	newTweet.textContent = textTweet;
+	newTweet.textContent = time() + '  ' + textTweet;
 	var parent = document.querySelector('.container-tweets');
 	parent.appendChild(newTweet);
 
@@ -71,4 +88,22 @@ function countText() {
 	} else {
 		btnDisabled();
 	}
+}
+
+
+function time() {
+	var date = new Date();
+	var hours = date.getHours();
+	var min = date.getMinutes();
+	var time;
+	if (min < 10) {
+		min = '0' + min;
+	}
+
+	if (hours >= 12 && hours <= 24) {
+		time = hours + ':' + min + ' PM';
+	} else {
+		time = hours + ':' + min + ' AM';
+	}
+	return time;
 }
