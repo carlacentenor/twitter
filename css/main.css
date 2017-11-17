@@ -150,6 +150,13 @@ figure img {
   background-color: white;
 }
 
+.box-info-twitter{
+  width: 295px;
+  height: 300px;
+  font-size: 12px;
+  outline:  1px solid red;
+}
+
 
 
 textarea {
@@ -204,4 +211,15 @@ h3 {
   font-size: 14px;
   color: #657786;
   margin: 10px 15px;
+}
+
+.tweet-style {
+  background-color: white;
+  width: inherit;
+  height: auto;
+  word-wrap: break-word;
+  border: 1px solid #e6ecf0;
+  padding: 15px;
+  font-family: 'Source Sans Pro';
+  font-size: 12px;
 }

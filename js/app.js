@@ -2,9 +2,6 @@ var btn = document.querySelector('#btn'); /*obtener el boton*/
 btn.disabled = true; /*carga la pag con el boton deshabiitado*/
 btn.style.backgroundColor = '#b9e1fa'; /*estilo deshabilitado*/
 var span = document.querySelector('span');
-
-
-
 var textarea = document.querySelector('#text'); /*obtenemos el textarea*/
 
 textarea.addEventListener('keyup', validate);
@@ -22,7 +19,7 @@ function validate() {
 
 	}
 }
-
+/**Función de Ajustar el TextArea deacuerdo al contenido */
 function resizeTextArea(event) {
 	var colsInitial = textarea.getAttribute('cols');
 	var rowsInitial = textarea.getAttribute('rows');
@@ -52,14 +49,8 @@ function btnEnabled() {
 function sendTweet(event) {
 	var textTweet = textarea.value;
 	var newTweet = document.createElement('div');
-	newTweet.style.backgroundColor = 'white';
-	newTweet.style.width = 'inherit';
-	newTweet.style.height = 'auto';
-	newTweet.style.wordWrap = 'break-word';
-	newTweet.style.border = '1px solid #e6ecf0';
-	newTweet.style.padding = '15px';
-	newTweet.style.fontFamily = 'Source Sans Pro';
-	newTweet.textContent = time() + '  ' + textTweet;
+	newTweet.setAttribute('class','tweet-style');
+	newTweet.textContent = time() + '    ' + textTweet;
 	var parent = document.querySelector('.container-tweets');
 	parent.appendChild(newTweet);
 
@@ -73,6 +64,7 @@ function clear() {
 	span.textContent = '';
 }
 
+/**Función de contador de caracteres  */
 function countText() {
 	var count = textarea.value.length;
 	var show = 140 - count;
@@ -90,7 +82,7 @@ function countText() {
 	}
 }
 
-
+/*Captura de la hora del Tweet*/ 
 function time() {
 	var date = new Date();
 	var hours = date.getHours();
@@ -99,7 +91,6 @@ function time() {
 	if (min < 10) {
 		min = '0' + min;
 	}
-
 	if (hours >= 12 && hours <= 24) {
 		time = hours + ':' + min + ' PM';
 	} else {
