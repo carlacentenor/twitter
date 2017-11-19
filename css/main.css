@@ -23,6 +23,10 @@ main {
   height: auto;
 }
 
+.btn-style{
+  background-color: #b9e1fa;
+}
+
 .name-user {
   font-weight: 700;
   font-size: 18px;
@@ -160,7 +164,7 @@ figure img {
 
 
 textarea {
-  width: 500px;
+  width: 450px;
   margin: 15px 70px 5px;
   border: 2px solid #a4d9f9;
   border-radius: 8px;
@@ -169,6 +173,7 @@ textarea {
   background-color: white;
   overflow: hidden;
   resize: none;
+  box-sizing: content-box;
 }
 
 button {

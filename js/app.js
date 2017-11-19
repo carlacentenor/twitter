@@ -1,18 +1,19 @@
 var btn = document.querySelector('#btn'); /*obtener el boton*/
 btn.disabled = true; /*carga la pag con el boton deshabiitado*/
-btn.style.backgroundColor = '#b9e1fa'; /*estilo deshabilitado*/
+btn.setAttribute('class','btn-style');
+
 var span = document.querySelector('span');
 var textarea = document.querySelector('#text'); /*obtenemos el textarea*/
-
+textarea.addEventListener('keydown', autosize);
 textarea.addEventListener('keyup', validate);
 textarea.addEventListener('keyup', countText);
-textarea.addEventListener('keydown', resizeTextArea);
+
 /*evento que inicializa con una tecla*/
 btn.addEventListener('click', sendTweet);
 
 /*funcion que valida que no ingrese campos vacios ni espacios continuos*/
 function validate() {
-	if (textarea.value.length === 0) { /*|| /^\s+|\s+$/.test(textarea.value))*/
+	if (textarea.value === '' ) { /*|| /^\s+|\s+$/.test(textarea.value))*/
 		btnDisabled();
 	} else {
 		btnEnabled();
@@ -20,17 +21,13 @@ function validate() {
 	}
 }
 /**Función de Ajustar el TextArea deacuerdo al contenido */
-function resizeTextArea(event) {
-	var colsInitial = textarea.getAttribute('cols');
-	var rowsInitial = textarea.getAttribute('rows');
-	if (textarea.value.length !== 0) {
-		if (event.keyCode == 13 || parseInt(textarea.value.length) % 62 == 0) {
-			var rowsFinal = parseInt(rowsInitial) + 1;
-			textarea.setAttribute('rows', rowsFinal);
-		}
-	} else {
-		textarea.setAttribute('rows', 2);
-	}
+
+function autosize(){
+  var el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto; padding:0';
+   el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  },0);
 }
 
 
