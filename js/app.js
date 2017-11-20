@@ -13,7 +13,7 @@ btn.addEventListener('click', sendTweet);
 
 /*funcion que valida que no ingrese campos vacios ni espacios continuos*/
 function validate() {
-	if (textarea.value === '' ) { /*|| /^\s+|\s+$/.test(textarea.value))*/
+	if (textarea.value === '' || textarea.value==false ) { 
 		btnDisabled();
 	} else {
 		btnEnabled();
